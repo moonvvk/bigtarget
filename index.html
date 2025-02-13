@@ -190,12 +190,19 @@ src="https://www.facebook.com/tr?id=1393538578302992&ev=PageView&noscript=1"
 
 
         <h3>Стоимость консультации: 5000тг</h3>
-        <div class="button bt2" onclick="openWhatsAppChat()">
-            <h2>Хочу консультацию</h2>
-        </div>
+       <div class="button bt2" id="leadButton" onclick="openWhatsAppChat()">
+    <h2>Хочу консультацию</h2>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('leadButton').addEventListener('click', function() {
+      fbq('track', 'Lead');
+    });
+  });
+</script>
     </div>
     <script src="script.js" defer>
-        fbq('track', 'Lead');
     </script>
 </body>
 
